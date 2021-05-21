@@ -116,7 +116,7 @@
       </div>
       <div class="flex justify-center items-center">
         <div class="dropdown-cb" data-trigger="over">
-          <button type="button" class="bg-blue-500 text-white rounded py-1 px-2 focus:outline-none"><i class="fa fa-arrow-down"></i> Icon Button</button>
+          <button type="button" class="bg-blue-500 text-white rounded py-1 px-2 focus:outline-none">Callback</button>
           <ul>
             <li><a href="#">item 1</a></li>
             <li><a href="#">item 2</a></li>
@@ -132,12 +132,10 @@
 
   <script type="text/javascript">
   $(document).ready(function() {
-    $('.dropdown').dropdown({});
+    $('.dropdown').dropdown();
 
     $('.dropdown-cb').dropdown({callback: (idx, ele) => {
-      alert(idx)
-      console.log(idx)
-      console.log(ele)
+      alert('index: ' + idx +  ', text: ' + $(ele).text())
     }});
   })
   </script>

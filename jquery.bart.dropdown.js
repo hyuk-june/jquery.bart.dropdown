@@ -1,5 +1,5 @@
 (function ($) {
-  $.fn.dropdown = function ({ custOption, callback }) {
+  $.fn.dropdown = function (data) {
     let options = {
       show: false,
       trigger: "click",
@@ -17,8 +17,16 @@
     const init = ($this) => {
       let isShow = false;
 
+      if (typeof data !== "object") {
+        data = {
+          custOption: {},
+          callback: null,
+        };
+      }
+
       // html data attribute and javascript object options
-      const opt = Object.assign({}, options, $this.data(), custOption);
+      // custOption = typeof custOption === "object" ? custOption : {};
+      const opt = Object.assign({}, options, $this.data(), data.custOption);
 
       const fnShow = function (ref) {
         if (isShow) return;
@@ -105,8 +113,8 @@
         isShow = false;
         $item.hide();
         $button.removeClass("active");
-        if (typeof callback === "function") {
-          callback($item.children().index($this), $this);
+        if (typeof data.callback === "function") {
+          data.callback($item.children().index(this), this);
         }
       };
 
