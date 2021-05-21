@@ -5,10 +5,13 @@
       trigger: "click",
       bgColor: "#fff",
       border: "1px solid #ddd",
-      padding: "0.5rem",
+      padding: "0.25rem",
       zIndex: 99,
       pos: "bottom",
-      itemOverColor: "#3b82f6",
+      itemBgColor: "#fff",
+      itemOverBgColor: "#3b82f6",
+      itemColor: "#000",
+      itemOverColor: "#fff",
     };
 
     const init = ($this) => {
@@ -56,12 +59,14 @@
         background: opt.bgColor,
         zIndex: opt.zIndex,
         border: opt.border,
-        padding: opt.padding,
         transform: "1s ease",
         width: "fit-content",
         minWidth: "100%",
+        listStyle: "none",
+        padding: "0",
+        margin: "0",
       });
-      $("*", $item).css({ width: "fit-content", whiteSpace: "nowrap" });
+      $("*", $item).css({ whiteSpace: "nowrap", padding: opt.padding });
 
       if (opt.pos === "bottom") {
         $item.css({ left: 0, top: "100%" });
@@ -76,6 +81,21 @@
       } else {
         $item.css({ left: 0, bottom: "100%" });
       }
+
+      $("> *", $item).hover(
+        function () {
+          $(this).css({
+            backgroundColor: opt.itemOverBgColor,
+            color: opt.itemOverColor,
+          });
+        },
+        function () {
+          $(this).css({
+            backgroundColor: opt.itemBgColor,
+            color: opt.itemColor,
+          });
+        }
+      );
 
       $("*", $button).css({ transition: "0.5s ease all" });
 
