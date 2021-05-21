@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery.bart.dropdown</title>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="./jquery.bart.dropdown.js"></script>
+  <style>
+    .dropdown button.active i {
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="container mx-auto pt-10">
+    <div class="grid grid-cols-3 grid-rows-3 h-96 border">
+      <div class="flex justify-center items-center">
+        <div class="dropdown">
+          <button type="button" class="bg-blue-500 text-white rounded py-1 px-2 focus:outline-none">to Down</button>
+          <ul>
+            <li><a href="#">item 1</a></li>
+            <li><a href="#">item 2</a></li>
+            <li><a href="#">item 3</a></li>
+            <li><a href="#">item 4</a></li>
+            <li><a href="#">item 5</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex justify-center items-center">
+        <div class="dropdown" data-pos="top">
+          <button type="button" class="bg-blue-500 text-white rounded py-1 px-2 focus:outline-none">to Top</button>
+          <ul>
+            <li><a href="#">item 1</a></li>
+            <li><a href="#">item 2</a></li>
+            <li><a href="#">item 3</a></li>
+            <li><a href="#">item 4</a></li>
+            <li><a href="#">item 5</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex justify-center items-center">
+        <div class="dropdown" data-pos="left">
+          <button type="button" class="bg-blue-500 text-white rounded py-1 px-2 focus:outline-none">to Left</button>
+          <ul>
+            <li><a href="#">item 1</a></li>
+            <li><a href="#">item 2</a></li>
+            <li><a href="#">item 3</a></li>
+            <li><a href="#">item 4</a></li>
+            <li><a href="#">item 5</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex justify-center items-center">
+        <div class="dropdown" data-pos="right">
+          <button type="button" class="bg-blue-500 text-white rounded py-1 px-2 focus:outline-none">to Right</button>
+          <ul>
+            <li><a href="#">item 1</a></li>
+            <li><a href="#">item 2</a></li>
+            <li><a href="#">item 3</a></li>
+            <li><a href="#">item 4</a></li>
+            <li><a href="#">item 5</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex justify-center items-center">
+        <div class="dropdown" data-pos="leftTop">
+          <button type="button" class="bg-blue-500 text-white rounded py-1 px-2 focus:outline-none">to LeftTop</button>
+          <ul>
+            <li><a href="#">item 1</a></li>
+            <li><a href="#">item 2</a></li>
+            <li><a href="#">item 3</a></li>
+            <li><a href="#">item 4</a></li>
+            <li><a href="#">item 5</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex justify-center items-center">
+        <div class="dropdown" data-pos="rightTop">
+          <button type="button" class="bg-blue-500 text-white rounded py-1 px-2 focus:outline-none">to RightTop</button>
+          <ul>
+            <li><a href="#">item 1</a></li>
+            <li><a href="#">item 2</a></li>
+            <li><a href="#">item 3</a></li>
+            <li><a href="#">item 4</a></li>
+            <li><a href="#">item 5</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex justify-center items-center">
+        <div class="dropdown" data-trigger="over">
+          <button type="button" class="bg-blue-500 text-white rounded py-1 px-2 focus:outline-none">Mouse Over Event</button>
+          <ul>
+            <li><a href="#">item 1</a></li>
+            <li><a href="#">item 2</a></li>
+            <li><a href="#">item 3</a></li>
+            <li><a href="#">item 4</a></li>
+            <li><a href="#">item 5</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex justify-center items-center">
+        <div class="dropdown" data-trigger="over">
+          <button type="button" class="bg-blue-500 text-white rounded py-1 px-2 focus:outline-none"><i class="fa fa-arrow-down"></i> Icon Button</button>
+          <ul>
+            <li><a href="#">item 1</a></li>
+            <li><a href="#">item 2</a></li>
+            <li><a href="#">item 3</a></li>
+            <li><a href="#">item 4</a></li>
+            <li><a href="#">item 5</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $('.dropdown').dropdown({callback: (idx, ele) => {
+      console.log(idx)
+      console.log(ele)
+    }});
+  })
+  </script>
+</body>
+</html>
