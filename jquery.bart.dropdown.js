@@ -109,7 +109,8 @@
 
       if (!opt.show) $item.hide();
 
-      const fnReset = function () {
+      const fnReset = function (ref) {
+        ref.stopPropagation();
         isShow = false;
         $item.hide();
         $button.removeClass("active");
