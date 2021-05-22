@@ -50,7 +50,7 @@ $('.dropdown').dropdown({
 | --------------- | ------ | ------------------------------ | -------------------------------------------------- |
 | trigger         | string | event method                   | 'click' or 'over'                                  |
 | bgColor         | string | background color               | '#fff'                                             |
-| border          | string | border color                   | '1px solid #ddd'                                   |
+| border          | string | border style                   | '1px solid #ddd'                                   |
 | zIndex          | number | z-index                        | 99                                                 |
 | pos             | string | show position                  | 'bottom','top','left','right','leftTop','rightTop' |
 | itemBgColor     | string | item's normal background color | '#fff'                                             |
